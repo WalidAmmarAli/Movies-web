@@ -1,9 +1,9 @@
-function createCarrusel(icon_1, icon_2, movies) {
+function createCarrusel(icon_1, icon_2, movies, button1, button2) {
   const carrusel_box = document.getElementById('carrusel');
   const html = `
     <div class="w-full flex">
-      <div class="text-red-100 text-2xl flex items-center justify-center w-10 rounded-xl cursor-pointer prev-icon p-6">
-        <i class="${icon_1}"></i>
+      <div class="text-red-100 text-2xl flex items-center justify-center w-10 rounded-xl cursor-pointer prev-icon p-6 hover:text-red-500 hover:bg-gray-900">
+        <i class="${icon_1}  hover:text-3xl"></i>
       </div>
       <div class="flex transition-transform duration-500 overflow-auto ease-in-out">
         <div class="flex gap-1 ml-1 mr-1">
@@ -14,8 +14,8 @@ function createCarrusel(icon_1, icon_2, movies) {
           `).join('')}
         </div>
       </div>
-      <div class="text-red-100 text-2xl flex items-center justify-center w-10 rounded-xl cursor-pointer next-icon p-8">
-        <i class="${icon_2}"></i>
+      <div class="text-red-100 text-2xl flex items-center justify-center w-10 rounded-xl cursor-pointer next-icon p-6 hover:text-red-500 hover:bg-gray-900">
+        <i class="${icon_2} hover:text-3xl"></i>
       </div>
     </div>
   `;
@@ -24,6 +24,7 @@ function createCarrusel(icon_1, icon_2, movies) {
 
   const prevIcon = carrusel_box.querySelector('.prev-icon');
   const nextIcon = carrusel_box.querySelector('.next-icon');
+  const moviesContainer = carrusel_box.querySelector('.flex.gap-1.ml-1.mr-1');
   const moviesCount = movies.length;
 
   let currentIndex = 0;
@@ -48,7 +49,6 @@ function createCarrusel(icon_1, icon_2, movies) {
   });
 
   function updateMovieList() {
-    const movieList = carrusel_box.querySelector('.flex.gap-1.ml-1.mr-1');
     const slicedMovies = movies.slice(currentIndex, currentIndex + 6);
     const movieElements = slicedMovies.map(movie => `
       <div class="w-1/6">
@@ -56,7 +56,7 @@ function createCarrusel(icon_1, icon_2, movies) {
       </div>
     `).join('');
 
-    movieList.innerHTML = movieElements;
+    moviesContainer.innerHTML = movieElements;
   }
 
   function startCarousel() {
@@ -84,8 +84,8 @@ function createCarrusel(icon_1, icon_2, movies) {
 fetch('../json/carrusel_info.json')
   .then(response => response.json())
   .then(data => {
-    const { icon_1, icon_2, movies } = data;
-    createCarrusel(icon_1, icon_2, movies);
+    const { icon_1, icon_2, movies, button1, button2 } = data;
+    createCarrusel(icon_1, icon_2, movies, button1, button2);
   })
   .catch(error => {
     console.error('Error al obtener el archivo JSON:', error);

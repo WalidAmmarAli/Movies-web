@@ -13,7 +13,7 @@ function createHeader(links, mainInfo, subInfo) {
       </ul>
 
       <div class=" h-auto flex flex-col items-center justify-center gap-8 pl-4 pr-8">
-        <h1 class=" text-white text-5xl">${mainInfo}</h1>
+        <h1 class=" text-white text-5xl p-0 m-0">${mainInfo}</h1>
         <h2 class=" text-gray-300 text-3xl pr-32">${subInfo}</h2>
       </div>
     `;

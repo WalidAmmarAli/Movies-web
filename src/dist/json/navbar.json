@@ -1,14 +1,6 @@
 {
-    "logo": "Movies",
-
-
-    "links":{
-        "link_1": "About us",
-        "link_2": "Content",
-        "link_3": "Contact",
-        "link_4": "Contact"
-    },
-
-    "icon": "Loggin"
+    "logo":"Movies",
+    "input":"Serch Content",
+    "icon": "fa-solid fa-user"
 
 }

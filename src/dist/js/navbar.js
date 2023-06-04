@@ -4,13 +4,11 @@ function createNavbar(logo, links, icon) {
       <div class="flex items-center h-auto">
         <a href="" class="text-red-500 text-5xl font-bold p-5 rounded-xl">${logo}</a>
       </div>
-      <ul class="text-black text-2xl font-medium flex items-center justify-center gap-8 mt-2">
-        <li><a href="">${links.link_1}</a></li>
-        <li><a href="">${links.link_2}</a></li>
-        <li><a href="">${links.link_3}</a></li>
-      </ul>
-      <div class="text-red-500 text-xl flex items-center justify-end mt-2 mr-4 font-bold cursor-pointer">
-        <h2>${icon}</h2>
+
+      <div class="text-red-500 text-3xl flex items-center justify-end mt-2 mr-8 font-bold gap-2 ">
+      <input class="bg-stone-950 rounded-md text-gray-400 text-sm w-56 h-8 p-1 placeholder-gray-400" placeholder="Search Content" />
+      <i class="fa-solid fa-magnifying-glass text-2xl text-gray-900 cursor-pointer"></i>
+      <i class="fa-solid fa-user cursor-pointer"></i>
       </div>
     `;
 

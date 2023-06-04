@@ -1,0 +1,13 @@
+{
+    "option":{
+        "link_1": "Peliculas",
+        "link_2": "Series",
+        "link_3": "doramas",
+        "link_4": "Anime"
+    },
+    "datos":{
+        "main_info":"Hi there! Welcome to Movies, where you can enjoy watching your favorite content.",
+        "sub_info":" Explore a universe of films, series, and anime, where your entertainment desires come to life. Get ready for an extraordinary cinematic experience that will transport you to new worlds of excitement and wonder."
+
+    }
+}
